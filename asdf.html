@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body id="bodyTag">
+  <div style="position: relative;" id="embedContainer"/>
+ <label>Hello World!</label>
+
+  <script type="text/javascript" charset="utf-8">
+    function inIframe () {
+      try {
+        return window.self !== window.top;
+      } catch (e) {
+	console.log("Exception : ", e);
+        return false;
+      }
+    }
+
+    var embedContainer = document.getElementById("embedContainer");
+    var embedURL = 'https://apption.co/embeds/08267f92';
+
+    if (inIframe()) {
+      // It's ok
+    } else {
+      embedContainer.innerHTML = `<div>
+<a style="text-decoration: none; color: black; font-weight: bold;" href="https://apption.co" target="_blank">🖼️️
+        Apption.co</a>
+<p>${'paste the url into your Notion page&#39;s /embed block.'}</p>
+<p><span style="font-weight: bold;">${embedURL}</span></p>
+</div>`
+    }
+  </script>
+
+  <script type="text/javascript" charset="utf-8">
+    (function() {
+      function getInitialColorMode() {
+        const mql = window.matchMedia('(prefers-color-scheme: dark)');
+        const hasMediaQueryPreference = typeof mql.matches === 'boolean';
+        if (hasMediaQueryPreference) {
+          return mql.matches ? 'dark' : 'light';
+        }
+        return 'light';
+      }
+      if ('light' === 'default') {
+        if (getInitialColorMode() === 'light') {
+          document.body.style.background = "white";
+        } else {
+          document.body.style.background = "rgb(25, 25, 25)";
+        }
+      } else {
+        document.body.style.background = "white";
+      }
+    })()
+  </script>
+</body>
+</html>
