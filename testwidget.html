@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+	function initPlayer() {
+		audio = new Audio();
+		//selectTrack(0);
+
+		audio.loop = false;
+
+		//$(audio).on("timeupdate", updateCurrTime);
+	}
+
+	initPlayer();
+</script>
+<script type="text/javascript" charset="utf-8">
+    function inIframe () {
+        try {
+            return window.self !== window.top;
+        } catch (e) {
+            return false;
+        }
+    }
+
+    var embedContainer = document.getElementById("embedContainer");
+    var embedURL = 'https://apption.co/embeds/08267f92';
+
+    if (inIframe()) {
+        // It's ok
+		alert("yes");
+    } else {
+		alert("no");
+    }
+</script>
+</html>
